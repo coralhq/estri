@@ -7,6 +7,12 @@ if [ "$S3_BUCKET" == "" ]; then
   echo "S3_BUCKET is required"
   exit 1
 fi
-sed "s/\${S3_BUCKET}/${S3_BUCKET}/g" $src > $target
 
+if [ "$S3_DIR" != "" ]; then
+  S3_DIR="\/${S3_DIR}"
+fi
+
+sed "s/\${S3_BUCKET}/${S3_BUCKET}/g; s/\${S3_DIR}/${S3_DIR}/g; s/\${S3_DIR}/${S3_DIR}/g" $src > $target
+
+cat $target
 nginx -g "daemon off;"
