@@ -1,6 +1,10 @@
 FROM nginx:1.11.6-alpine
 
-COPY default.conf run.sh /app/
+RUN apk add --update python \
+    && rm -rf /var/cache/apk/*
 
-EXPOSE 80
-CMD /app/run.sh
+WORKDIR /app
+COPY default.conf envsubst.py run.sh ./
+
+EXPOSE 8080
+CMD ./run.sh

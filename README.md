@@ -33,8 +33,9 @@ Simple nginx container that serves static files from public Amazon S3.
 ```sh
 docker run -d \
   --name estri \
-  -p 80:80 \
+  -p 8080:8080 \
   -e S3_BUCKET=BUCKET_NAME_HERE \
+  -e S3_DIR=BUCKET_DIR_HERE \ # optional
   coralteam/estri:latest
 ```
 
