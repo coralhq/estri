@@ -34,8 +34,10 @@ Simple nginx container that serves static files from public Amazon S3.
 docker run -d \
   --name estri \
   -p 8080:8080 \
-  -e S3_BUCKET=BUCKET_NAME_HERE \
-  -e S3_DIR=BUCKET_DIR_HERE \ # optional
+  -e S3_BUCKET=BUCKET_NAME_HERE \  # required
+  -e S3_DIR=BUCKET_DIR_HERE \  # optional
+  -e S3_DOMAIN=sgp1.digitaloceanspaces.com \  # optional, default: s3.amazonaws.com
+  -e DNS_RESOLVER=8.8.8.8 \  # optional, default: 1.1.1.1
   coralteam/estri:latest
 ```
 
