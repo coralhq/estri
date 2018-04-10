@@ -1,5 +1,7 @@
 # ESTRI
 
+[![Docker Automated build](https://img.shields.io/docker/automated/coralteam/estri.svg?style=flat-square)](https://hub.docker.com/r/coralteam/estri/) [![Docker Build Status](https://img.shields.io/docker/build/coralteam/estri.svg?style=flat-square)](https://hub.docker.com/r/coralteam/estri/) [![Docker Pulls](https://img.shields.io/docker/pulls/coralteam/estri.svg?style=flat-square)](https://hub.docker.com/r/coralteam/estri/)
+
 Simple nginx container that serves static files from public Amazon S3.
 
 ### Notes
